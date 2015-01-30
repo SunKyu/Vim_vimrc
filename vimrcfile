@@ -1,5 +1,9 @@
 set number
-syntax on
+syntax enable
+set background=light
+"set background=light
+" if you want light 
+"colorscheme solarized
 set ts=2
 set sw=2
 set sts=2
@@ -12,9 +16,7 @@ set laststatus=2
 set t_Co=256
 
 set nocompatible
-autocmd vimenter * NERDTree
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -27,20 +29,21 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'sudo.vim'
-Plugin 'scrooloose/nerdtree'
 
 " Language Support
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'OmniCppComplete'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'gabrielelana/vim-markdown'
+"Plugin 'gabrielelana/vim-markdown'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'kchmck/vim-coffee-script'
-"Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
 Plugin 'leshill/vim-json'
 Plugin 'vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-markdown'
+Plugin 'altercation/vim-colors-solarized'
 
 " Git
 Plugin 'gregsexton/gitv'
@@ -71,6 +74,8 @@ filetype plugin indent on
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 nmap <F8> :TagbarToggle<CR>
 nnoremap <C-Left> :tabprevious<CR>
