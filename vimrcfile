@@ -4,15 +4,15 @@ set background=light
 "set background=light
 " if you want light 
 "colorscheme solarized
-set ts=2
-set sw=2
-set sts=2
+set ts=4
+set sw=4
+set sts=4
 set expandtab
 set cindent
 set smartindent
 set autoindent
 
-set laststatus=2
+set laststatus=4
 set t_Co=256
 
 set nocompatible
@@ -38,7 +38,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 Plugin 'leshill/vim-json'
 Plugin 'vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
