@@ -7,3 +7,5 @@
 ```
   run `vim`  
   :PluginInstall (run in vim)  
+
+slack test
