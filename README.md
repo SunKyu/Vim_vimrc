@@ -9,3 +9,4 @@
   :PluginInstall (run in vim)  
 
 slack test
+2
