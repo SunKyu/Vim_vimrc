@@ -44,7 +44,7 @@ Plugin 'vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-markdown'
 Plugin 'altercation/vim-colors-solarized'
-
+Plugin 'Mizuchi/STL-Syntax'
 " Git
 Plugin 'gregsexton/gitv'
 Plugin 'tpope/vim-fugitive'
