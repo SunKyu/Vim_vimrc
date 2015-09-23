@@ -29,10 +29,11 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'sudo.vim'
+Plugin 'Lokaltog/vim-powerline'
 
 " Language Support
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'OmniCppComplete'
+Plugin 'OmniCppComplete'
 Plugin 'derekwyatt/vim-scala'
 "Plugin 'gabrielelana/vim-markdown'
 Plugin 'hail2u/vim-css3-syntax'
@@ -45,6 +46,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-markdown'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Mizuchi/STL-Syntax'
+"Plugin 'Valloric/YouCompleteMe'
 " Git
 Plugin 'gregsexton/gitv'
 Plugin 'tpope/vim-fugitive'
@@ -70,10 +72,41 @@ Plugin 'tpope/vim-dispatch'
 call vundle#end()
 
 filetype plugin indent on
+"configure tags - add additional tags here or comment out not-used ones
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/gl
+set tags+=~/.vim/tags/sdl
+set tags+=~/.vim/tags/qt4
+" build tags of your own project with Ctrl-F12
+map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q.<CR>
 
-let g:airline#extensions#tabline#enabled=1
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+
 let g:airline_powerline_fonts=1
-
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:ycm_global_ycm_extra_conf = ''
+set omnifunc=syntaxcomplete#Complete
+set backspace=indent,eol,start
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
 autocmd StdinReadPre * let s:std_in=1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
