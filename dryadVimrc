@@ -1,0 +1,43 @@
+set hidden
+set nowrap
+set autoindent
+set copyindent
+set nu
+set nocompatible
+set shiftwidth=4
+set shiftround
+set showmatch
+set ignorecase
+set smartcase
+set smarttab
+set hlsearch
+set incsearch
+set title
+set pastetoggle=<F2>
+"source $VIMRUNTIME/vimrc_example.vim
+set tabstop=4
+set expandtab
+set modifiable
+
+syntax enable
+
+let g:syntastic_python_checker = 'pylint'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+"util
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+
+"markdown
+Plugin 'plasticboy/vim-markdown'
+
+"python
+"Plugin 'klen/python-mode'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
